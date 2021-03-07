@@ -1,5 +1,5 @@
 name: bleed
-version: 1.0.0
+version: 1.0.1
 description: auto update tool for apt package managers.
 environment: 
   sdk: '>=2.9.0 <3.0.0'
