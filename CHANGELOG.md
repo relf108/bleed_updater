@@ -1,3 +1,6 @@
+# 1.0.2
+executable added
+
 # 1.0.1
 license added for pub release
 
