@@ -13,8 +13,23 @@ import 'package:dcli/dcli.dart';
 ///
 
 void main(List<String> args) {
-  'apt update -y'.start(privileged: true);
-  'apt upgrade -y --allow-downgrades'.start(privileged: true);
-  'apt autoremove -y'.start(privileged: true);
-  green('Bleading complete. Keep boolin, King');
+  var flag = '';
+  if (args.isNotEmpty) {
+    flag = args[0].toString();
+  }
+  try {
+    'flatpak update -y'.start(privileged: true);
+    'flatpak upgrade -y'.start(privileged: true);
+    'apt update -y'.start(privileged: true);
+    'apt upgrade -y --allow-downgrades'.start(privileged: true);
+    if (flag == '-d' || flag == '--dist') {
+      'apt dist-upgrade -y --allow-downgrades'.start(privileged: true);
+    }
+    'apt autoremove -y'.start(privileged: true);
+  } on Exception catch (e) {
+    echo(red('Update failed with error: \n $e'));
+    exit(1);
+  }
+  echo(green('Update complete'));
+  exit(0);
 }
