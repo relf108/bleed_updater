@@ -25,7 +25,11 @@ void main(List<String> args) {
     'apt update -y'.start(privileged: true);
     'apt upgrade -y --allow-downgrades'.start(privileged: true);
     if (flag == '-d' || flag == '--dist') {
-      var distro = read('/etc/os-release').firstLine.toString().split('\"')[1].replaceAll('\"', '');
+      var distro = read('/etc/os-release')
+          .firstLine
+          .toString()
+          .split('\"')[1]
+          .replaceAll('\"', '');
       echo(green('Upgrading $distro \n'));
       'apt dist-upgrade -y --allow-downgrades'.start(privileged: true);
     }
