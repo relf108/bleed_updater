@@ -1,3 +1,6 @@
+# 1.0.9
+ remove redundant line
+
 # 1.0.8
 do deb upgrades first to prompt for pass first
 
