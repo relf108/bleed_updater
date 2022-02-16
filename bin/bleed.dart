@@ -19,8 +19,8 @@ void main(List<String> args) {
   }
   try {
     echo(green('Bleeding Flatpaks \n'));
-    'flatpak update -y'.start(privileged: true);
-    'flatpak upgrade -y'.start(privileged: true);
+    'flatpak update -y'.start();
+    'flatpak upgrade -y'.start();
     echo(green('Bleeding Debs \n'));
     'apt update -y'.start(privileged: true);
     'apt upgrade -y --allow-downgrades'.start(privileged: true);
