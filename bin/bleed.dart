@@ -18,12 +18,12 @@ void main(List<String> args) {
     flag = args[0].toString();
   }
   try {
-    echo(green('Bleeding Flatpaks \n'));
-    'flatpak update -y'.start();
-    'flatpak upgrade -y'.start();
     echo(green('Bleeding Debs \n'));
     'apt update -y'.start(privileged: true);
     'apt upgrade -y --allow-downgrades'.start(privileged: true);
+    echo(green('Bleeding Flatpaks \n'));
+    'flatpak update -y'.start();
+    'flatpak upgrade -y'.start();
     if (flag == '-d' || flag == '--dist') {
       var distro = read('/etc/os-release')
           .firstLine
