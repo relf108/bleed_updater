@@ -1,3 +1,6 @@
+# 1.0.7
+fix flatpak package management
+
 # 1.0.6
 Add dist upgrade functionality + decorations
 
