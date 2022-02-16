@@ -23,7 +23,6 @@ void main(List<String> args) {
     'apt upgrade -y --allow-downgrades'.start(privileged: true);
     echo(green('Bleeding Flatpaks \n'));
     'flatpak update -y'.start();
-    'flatpak upgrade -y'.start();
     if (flag == '-d' || flag == '--dist') {
       var distro = read('/etc/os-release')
           .firstLine
