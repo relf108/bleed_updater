@@ -1,3 +1,6 @@
+# 1.0.8
+do deb upgrades first to prompt for pass first
+
 # 1.0.7
 fix flatpak package management
 
